@@ -8,9 +8,10 @@ var logger = require('morgan');
 var usersRouter = require('./routes/users');
 var controller=require('./controller/controller')
 var model=require('./controller/model');
-var hbs=require('express-handlebars')
+var hbs=require('express-handlebars');
+const { log } = require('console');
 var app = express();
-
+var port=process.env.PORT || 3000
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -42,6 +43,8 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-
+app.listen(port,()=>{
+  console.log("server started");
+})
    
 module.exports = app;
