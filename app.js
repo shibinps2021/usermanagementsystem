@@ -11,6 +11,7 @@ var model=require('./controller/model');
 var hbs=require('express-handlebars');
 const { log } = require('console');
 var app = express();
+require('dotenv').config()
 var port=process.env.PORT || 3000
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
